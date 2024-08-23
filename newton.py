@@ -4,7 +4,8 @@ from functools import partial
 
 def optimize(start, fun):
     delta = 10 ** (-6)
-    eps = 10 ** (-6)
+    # let user pick
+    eps = float(input("Epsilon: "))
     last_val = start
     first_der_func = partial(derivative, fun=fun, eps=eps)
     first_der = first_der_func(last_val)
@@ -24,3 +25,4 @@ def optimize(start, fun):
 def derivative(x, fun, eps):
     der = (fun(x + eps) - fun(x)) / eps
     return der
+
