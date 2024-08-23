@@ -4,7 +4,7 @@ from functools import partial
 
 def optimize(start, fun):
     delta = 10 ** (-6)
-    eps = 10 ** (-6)
+    eps = 10 ** (-5)
     last_val = start
     first_der_func = partial(derivative, fun=fun, eps=eps)
     first_der = first_der_func(last_val)
